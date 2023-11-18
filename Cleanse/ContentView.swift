@@ -10,13 +10,17 @@ import SwiftData
 import Supabase
 
 struct ContentView: View {
-    var sb: SupabaseClient = SupabaseClient(supabaseURL: Constants.sbURL, supabaseKey: Constants.sbKey)
+    let sb: Supabase = Supabase()
+    var loggedIn: Bool
+    
+    init() {
+//        loggedIn = await sb.loggedin()
+        loggedIn = true
+    }
     
     var body: some View {
-        WelcomeView()
+        loggedIn ? WelcomeView() : WelcomeView()
     }
 }
 
-#Preview {
-    ContentView()
-}
+

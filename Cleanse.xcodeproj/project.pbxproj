@@ -19,6 +19,7 @@
 		144DBB1D2B02E28A00592C49 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144DBB1C2B02E28A00592C49 /* WelcomeView.swift */; };
 		144DBB1F2B02E9FB00592C49 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144DBB1E2B02E9FB00592C49 /* SignInView.swift */; };
 		144DBB212B02EA0900592C49 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144DBB202B02EA0900592C49 /* SignUpView.swift */; };
+		144DBB232B0940D100592C49 /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144DBB222B0940D100592C49 /* Supabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		144DBB1C2B02E28A00592C49 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		144DBB1E2B02E9FB00592C49 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		144DBB202B02EA0900592C49 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		144DBB222B0940D100592C49 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +106,12 @@
 		142AB11E2AF71B5C00E25BFC /* Cleanse */ = {
 			isa = PBXGroup;
 			children = (
-				143482832AFF3DFF008890F2 /* Constants.swift */,
 				142AB11F2AF71B5C00E25BFC /* CleanseApp.swift */,
 				142AB1212AF71B5C00E25BFC /* ContentView.swift */,
-				144DBB1B2B02DBBE00592C49 /* Main */,
+				143482832AFF3DFF008890F2 /* Constants.swift */,
+				144DBB222B0940D100592C49 /* Supabase.swift */,
 				144DBB1A2B02DBA900592C49 /* Intro */,
+				144DBB1B2B02DBBE00592C49 /* Home */,
 				142AB1252AF71B6000E25BFC /* Assets.xcassets */,
 				142AB1272AF71B6000E25BFC /* Preview Content */,
 			);
@@ -150,11 +153,11 @@
 			path = Intro;
 			sourceTree = "<group>";
 		};
-		144DBB1B2B02DBBE00592C49 /* Main */ = {
+		144DBB1B2B02DBBE00592C49 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Main;
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				144DBB232B0940D100592C49 /* Supabase.swift in Sources */,
 				144DBB1D2B02E28A00592C49 /* WelcomeView.swift in Sources */,
 				142AB1222AF71B5C00E25BFC /* ContentView.swift in Sources */,
 				142AB1202AF71B5C00E25BFC /* CleanseApp.swift in Sources */,
@@ -387,6 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_PKGINFO_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -444,6 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_PKGINFO_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -465,6 +471,7 @@
 				DEVELOPMENT_TEAM = CS89S3NJDB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -497,6 +504,7 @@
 				DEVELOPMENT_TEAM = CS89S3NJDB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

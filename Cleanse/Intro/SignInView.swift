@@ -13,7 +13,6 @@ struct SignInView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var username: String = ""
     @State private var password: String = ""
-    var sb: SupabaseClient = SupabaseClient(supabaseURL: Constants.sbURL, supabaseKey: Constants.sbKey)
     
     var body: some View {
         VStack(alignment: .center) {
@@ -23,16 +22,17 @@ struct SignInView: View {
             Button("Submit") {
                 print("username: \(username)")
                 print("password: \(password)")
-                dismiss()
-//                Task {
-//                    var res = try await sb.auth.signIn(
-//                        email: username,
-//                        password: password)
-//                }
+                Task {
+                    await Supabase().signIn(username: username, password: password)
+                }
             }
             .foregroundColor(username.isEmpty || password.isEmpty ? Color.gray : Color.blue)
             .disabled(username.isEmpty || password.isEmpty)
         }
 
     }
+}
+
+#Preview {
+    SignInView()
 }

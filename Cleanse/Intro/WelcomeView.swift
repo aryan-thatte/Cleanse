@@ -24,7 +24,7 @@ struct WelcomeView: View {
         }
             .sheet(isPresented: $signUp, content: {
                 SignUpView()
-                    .presentationDetents([.height(200)])
+                    .presentationDetents([.height(300)])
             })
             .frame(width: 100, height: 100)
             .font(.title)
@@ -37,7 +37,7 @@ struct WelcomeView: View {
         }
             .sheet(isPresented: $signIn, content: {
                 SignInView()
-                    .presentationDetents([.height(200)])
+                    .presentationDetents([.height(300)])
             })
             .frame(width: 100, height: 100)
             .font(.title)
@@ -45,4 +45,8 @@ struct WelcomeView: View {
             .background(Color.blue)
             .cornerRadius(10)
     }
+}
+
+#Preview {
+    WelcomeView()
 }
