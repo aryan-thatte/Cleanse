@@ -20,14 +20,13 @@ struct SignInView: View {
             SecureField("Password", text: $password)
             
             Button("Submit") {
-                print("username: \(username)")
-                print("password: \(password)")
                 Task {
                     await Supabase().signIn(username: username, password: password)
                 }
+                dismiss()
             }
-            .foregroundColor(username.isEmpty || password.isEmpty ? Color.gray : Color.blue)
-            .disabled(username.isEmpty || password.isEmpty)
+                .foregroundColor(username.isEmpty || password.isEmpty ? Color.gray : Color.blue)
+                .disabled(username.isEmpty || password.isEmpty)
         }
 
     }

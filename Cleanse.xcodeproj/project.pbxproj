@@ -20,6 +20,8 @@
 		144DBB1F2B02E9FB00592C49 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144DBB1E2B02E9FB00592C49 /* SignInView.swift */; };
 		144DBB212B02EA0900592C49 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144DBB202B02EA0900592C49 /* SignUpView.swift */; };
 		144DBB232B0940D100592C49 /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144DBB222B0940D100592C49 /* Supabase.swift */; };
+		14FFDA232B12E9A200A45DB0 /* ScreenTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FFDA222B12E9A200A45DB0 /* ScreenTime.swift */; };
+		14FFDA262B15966000A45DB0 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FFDA252B15966000A45DB0 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		144DBB1E2B02E9FB00592C49 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		144DBB202B02EA0900592C49 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		144DBB222B0940D100592C49 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
+		14FFDA222B12E9A200A45DB0 /* ScreenTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTime.swift; sourceTree = "<group>"; };
+		14FFDA242B12FA1C00A45DB0 /* Cleanse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cleanse.entitlements; sourceTree = "<group>"; };
+		14FFDA252B15966000A45DB0 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +111,13 @@
 		142AB11E2AF71B5C00E25BFC /* Cleanse */ = {
 			isa = PBXGroup;
 			children = (
+				14FFDA242B12FA1C00A45DB0 /* Cleanse.entitlements */,
 				142AB11F2AF71B5C00E25BFC /* CleanseApp.swift */,
 				142AB1212AF71B5C00E25BFC /* ContentView.swift */,
 				143482832AFF3DFF008890F2 /* Constants.swift */,
 				144DBB222B0940D100592C49 /* Supabase.swift */,
+				14FFDA252B15966000A45DB0 /* Models.swift */,
+				14FFDA222B12E9A200A45DB0 /* ScreenTime.swift */,
 				144DBB1A2B02DBA900592C49 /* Intro */,
 				144DBB1B2B02DBBE00592C49 /* Home */,
 				142AB1252AF71B6000E25BFC /* Assets.xcassets */,
@@ -298,9 +306,11 @@
 			files = (
 				144DBB232B0940D100592C49 /* Supabase.swift in Sources */,
 				144DBB1D2B02E28A00592C49 /* WelcomeView.swift in Sources */,
+				14FFDA232B12E9A200A45DB0 /* ScreenTime.swift in Sources */,
 				142AB1222AF71B5C00E25BFC /* ContentView.swift in Sources */,
 				142AB1202AF71B5C00E25BFC /* CleanseApp.swift in Sources */,
 				143482842AFF3DFF008890F2 /* Constants.swift in Sources */,
+				14FFDA262B15966000A45DB0 /* Models.swift in Sources */,
 				144DBB212B02EA0900592C49 /* SignUpView.swift in Sources */,
 				144DBB1F2B02E9FB00592C49 /* SignInView.swift in Sources */,
 			);
@@ -465,6 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cleanse/Cleanse.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -500,6 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Cleanse/Cleanse.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

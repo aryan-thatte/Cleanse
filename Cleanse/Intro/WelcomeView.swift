@@ -44,6 +44,17 @@ struct WelcomeView: View {
             .foregroundColor(Color.white)
             .background(Color.blue)
             .cornerRadius(10)
+        
+        Button("Create Cleanse") {
+            Task {
+                let _: Void = await Supabase().createCleanse(name: "testCleanse", start: Date.now, end: Date.now, penalty: "penaltyyy")
+            }
+        }
+            .frame(width: 100, height: 100)
+            .font(.title)
+            .foregroundColor(Color.white)
+            .background(Color.blue)
+            .cornerRadius(10)
     }
 }
 

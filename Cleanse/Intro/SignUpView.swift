@@ -27,7 +27,7 @@ struct SignUpView: View {
             }
             dismiss()
         }
-        .disabled(username.isEmpty || password.isEmpty)
+            .disabled(username.isEmpty || password.isEmpty)
 
     }
 }
