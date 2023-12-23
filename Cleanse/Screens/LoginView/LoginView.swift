@@ -61,5 +61,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    WelcomeView()
+    LoginView()
 }

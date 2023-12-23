@@ -23,28 +23,31 @@ class Supabase: ObservableObject {
     func signUp(username: String, password: String) async -> Void {
         do {
             try await sb.auth.signUp(email: username, password: password)
-            self.authenticated = true
         } catch {
             print("signUp() failed with the following error: \(error)")
+            return
         }
+        self.authenticated = true
     }
     
     func signIn(username: String, password: String) async -> Void {
         do {
             try await sb.auth.signIn(email: username, password: password)
-            self.authenticated = true
         } catch {
             print("signIn() failed with the following error: \(error)")
+            return
         }
+        self.authenticated = true
     }
     
     func signOut() async -> Void {
         do {
             try await sb.auth.signOut()
-            self.authenticated = false
         } catch {
             print("signOut() failed with the following error: \(error)")
+            return
         }
+        self.authenticated = false
     }
     
     func loggedin() async -> Bool {

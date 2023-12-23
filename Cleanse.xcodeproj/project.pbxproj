@@ -118,7 +118,7 @@
 				14FFDA242B12FA1C00A45DB0 /* Cleanse.entitlements */,
 				142AB11F2AF71B5C00E25BFC /* CleanseApp.swift */,
 				14B8DDF82B2FF3810074D8FA /* Back End */,
-				14B8DDF92B2FF39C0074D8FA /* Views */,
+				14B8DDF92B2FF39C0074D8FA /* Screens */,
 				142AB1252AF71B6000E25BFC /* Assets.xcassets */,
 				142AB1272AF71B6000E25BFC /* Preview Content */,
 			);
@@ -178,14 +178,14 @@
 			path = "Back End";
 			sourceTree = "<group>";
 		};
-		14B8DDF92B2FF39C0074D8FA /* Views */ = {
+		14B8DDF92B2FF39C0074D8FA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				14B8DDF42B2FF28F0074D8FA /* ContentView */,
 				14B8DDF72B2FF3530074D8FA /* HomeView */,
 				14B8DDFA2B2FF3BE0074D8FA /* LoginView */,
 			);
-			path = Views;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		14B8DDFA2B2FF3BE0074D8FA /* LoginView */ = {
