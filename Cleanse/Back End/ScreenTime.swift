@@ -11,6 +11,8 @@ import DeviceActivity
 
 
 struct ScreenTime {
+    // https://crunchybagel.com/monitoring-app-usage-using-the-screen-time-api/
+    
     private let ac = AuthorizationCenter.shared
     
     func requestPermission() {

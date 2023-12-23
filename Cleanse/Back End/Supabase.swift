@@ -9,15 +9,21 @@ import Foundation
 import Supabase
 import SwiftUI
 
-struct Supabase {
+class Supabase: ObservableObject {
+    // shared environment instance of Supabase class
+    static var shared: Supabase = Supabase()
+    
+    // updated variable which changes based on if user logs in/out
+    @Published var authenticated: Bool = false
+    
     private static let sbURL = URL(string: ProcessInfo.processInfo.environment["supabaseURL"]!)!
     private static let sbKey: String = ProcessInfo.processInfo.environment["supabaseKey"]!
-    @AppStorage("EMAIL") var _email: String?
-    private var sb: SupabaseClient = SupabaseClient(supabaseURL: sbURL, supabaseKey: sbKey)
+    var sb: SupabaseClient = SupabaseClient(supabaseURL: sbURL, supabaseKey: sbKey)
     
     func signUp(username: String, password: String) async -> Void {
         do {
             try await sb.auth.signUp(email: username, password: password)
+            self.authenticated = true
         } catch {
             print("signUp() failed with the following error: \(error)")
         }
@@ -26,7 +32,7 @@ struct Supabase {
     func signIn(username: String, password: String) async -> Void {
         do {
             try await sb.auth.signIn(email: username, password: password)
-            _email = username
+            self.authenticated = true
         } catch {
             print("signIn() failed with the following error: \(error)")
         }
@@ -35,7 +41,7 @@ struct Supabase {
     func signOut() async -> Void {
         do {
             try await sb.auth.signOut()
-            _email = nil
+            self.authenticated = false
         } catch {
             print("signOut() failed with the following error: \(error)")
         }

@@ -20,10 +20,9 @@ struct SignUpView: View {
             SecureField("Password", text: $password)
         }
         Button("Submit") {
-            print("username: \(username)")
-            print("password: \(password)")
             Task {
                 await Supabase().signUp(username: username, password: password)
+                print("Signed up with \(username)")
             }
             dismiss()
         }

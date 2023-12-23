@@ -10,6 +10,7 @@ import SwiftUI
 import Supabase
 
 struct SignInView: View {
+    @EnvironmentObject var sb: Supabase
     @Environment(\.dismiss) private var dismiss
     @State private var username: String = ""
     @State private var password: String = ""
@@ -21,7 +22,9 @@ struct SignInView: View {
             
             Button("Submit") {
                 Task {
-                    await Supabase().signIn(username: username, password: password)
+                    await sb.signIn(username: username, password: password)
+                    print("Signed into \(username)")
+                    await ContentViewModel().getLoggedInStatus()
                 }
                 dismiss()
             }

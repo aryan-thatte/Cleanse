@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 import Supabase
 
-struct WelcomeView: View {
+struct LoginView: View {
+    @EnvironmentObject var sb: Supabase
     @State private var signUp: Bool = false
     @State private var signIn: Bool = false
     
@@ -34,7 +35,7 @@ struct WelcomeView: View {
         
         Button("Sign Out") {
             Task {
-                await Supabase().signOut()
+                await sb.signOut()
                 print("Signed out")
             }
         }
@@ -44,10 +45,10 @@ struct WelcomeView: View {
             .background(Color.blue)
             .cornerRadius(10)
         
-        Button("Joining Cleanse") {
+        Button("Get User") {
             Task {
-                print(await Supabase().getUser()?.email as Any)
-                print(await Supabase().deleteCleanse(code: UUID(uuidString: "c79c6395-ca2d-4a15-82d3-2b6f77a30aad")!))
+                let user = await sb.getUser()
+                print(user as Any)
             }
         }
             .frame(width: 100, height: 100)
@@ -55,6 +56,7 @@ struct WelcomeView: View {
             .foregroundColor(Color.white)
             .background(Color.blue)
             .cornerRadius(10)
+
     }
 }
 

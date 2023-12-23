@@ -10,9 +10,12 @@ import SwiftData
 
 @main
 struct CleanseApp: App {
+    @StateObject var sb: Supabase = Supabase.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(sb)
         }
     }
 }
