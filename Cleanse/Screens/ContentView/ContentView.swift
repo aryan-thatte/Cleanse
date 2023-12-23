@@ -10,7 +10,6 @@ import Supabase
 
 struct ContentView: View {
     @EnvironmentObject var sb: Supabase
-    @ObservedObject var viewModel = ContentViewModel()
     
     var body: some View {
         Group {
@@ -26,4 +25,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(Supabase.shared)
 }

@@ -24,7 +24,6 @@ struct SignInView: View {
                 Task {
                     await sb.signIn(username: username, password: password)
                     print("Signed into \(username)")
-                    await ContentViewModel().getLoggedInStatus()
                 }
                 dismiss()
             }
@@ -36,5 +35,6 @@ struct SignInView: View {
 }
 
 #Preview {
-    SignInView()
+    LoginView()
+        .environmentObject(Supabase.shared)
 }

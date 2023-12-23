@@ -8,10 +8,6 @@
 import Foundation
 
 final class ContentViewModel: ObservableObject {
-    @Published var loggedIn: Bool = false
     
-    func getLoggedInStatus() async {
-        loggedIn = await Supabase().loggedin()
-    }
     
 }

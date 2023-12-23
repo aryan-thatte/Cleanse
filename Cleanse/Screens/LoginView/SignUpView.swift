@@ -32,5 +32,6 @@ struct SignUpView: View {
 }
 
 #Preview {
-    SignUpView()
+    LoginView()
+        .environmentObject(Supabase.shared)
 }

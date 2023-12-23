@@ -15,51 +15,59 @@ struct LoginView: View {
     @State private var signIn: Bool = false
     
     var body: some View {
-        
-        Text("Cleanse")
-        
-        Text("Welcome to a new beginning 😌")
+        VStack {
+            Spacer()
+            
+            Text("Cleanse")
+                .font(.largeTitle)
+            Text("Welcome to your new beginning 😌")
+                .font(.headline)
+            
+            Spacer()
+            
+            HStack {
+                Button("Sign Up") {
+                    signUp.toggle()
+                }
+                .sheet(isPresented: $signUp, content: {
+                    SignUpView()
+                })
+                .frame(width: 100, height: 100)
+                .font(.title)
+                .foregroundColor(Color.white)
+                .background(Color.blue)
+                .cornerRadius(10)
                 
-        Button("Sign In") {
-            signIn.toggle()
-        }
-            .sheet(isPresented: $signIn, content: {
-                SignInView()
-                    .presentationDetents([.height(300)])
-            })
-            .frame(width: 100, height: 100)
-            .font(.title)
-            .foregroundColor(Color.white)
-            .background(Color.blue)
-            .cornerRadius(10)
-        
-        Button("Sign Out") {
-            Task {
-                await sb.signOut()
-                print("Signed out")
+                Button("Sign In") {
+                    signIn.toggle()
+                }
+                .sheet(isPresented: $signIn, content: {
+                    SignInView()
+                })
+                .frame(width: 100, height: 100)
+                .font(.title)
+                .foregroundColor(Color.white)
+                .background(Color.blue)
+                .cornerRadius(10)
+                
+                Button("Get User") {
+                    Task {
+                        print(await sb.getUser() as Any)
+                    }
+                }
+                .frame(width: 100, height: 100)
+                .font(.title)
+                .foregroundColor(Color.white)
+                .background(Color.blue)
+                .cornerRadius(10)
             }
+            
+            Spacer()
         }
-            .frame(width: 100, height: 100)
-            .font(.title)
-            .foregroundColor(Color.white)
-            .background(Color.blue)
-            .cornerRadius(10)
-        
-        Button("Get User") {
-            Task {
-                let user = await sb.getUser()
-                print(user as Any)
-            }
-        }
-            .frame(width: 100, height: 100)
-            .font(.title)
-            .foregroundColor(Color.white)
-            .background(Color.blue)
-            .cornerRadius(10)
-
     }
 }
 
 #Preview {
     LoginView()
+        .environmentObject(Supabase.shared)
 }
