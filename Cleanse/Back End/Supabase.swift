@@ -27,7 +27,7 @@ class Supabase: ObservableObject {
             print("signUp() failed with the following error: \(error)")
             return
         }
-        self.authenticated = true
+        authenticated = true
     }
     
     func signIn(username: String, password: String) async -> Void {
@@ -37,7 +37,7 @@ class Supabase: ObservableObject {
             print("signIn() failed with the following error: \(error)")
             return
         }
-        self.authenticated = true
+        authenticated = true
     }
     
     func signOut() async -> Void {
@@ -47,7 +47,7 @@ class Supabase: ObservableObject {
             print("signOut() failed with the following error: \(error)")
             return
         }
-        self.authenticated = false
+        authenticated = false
     }
     
     func loggedin() async -> Bool {

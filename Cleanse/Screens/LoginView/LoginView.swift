@@ -15,54 +15,51 @@ struct LoginView: View {
     @State private var signIn: Bool = false
     
     var body: some View {
-        VStack {
-            Spacer()
-            
-            Text("Cleanse")
-                .font(.largeTitle)
-            Text("Welcome to your new beginning 😌")
-                .font(.headline)
-            
-            Spacer()
-            
-            HStack {
-                Button("Sign Up") {
-                    signUp.toggle()
-                }
-                .sheet(isPresented: $signUp, content: {
-                    SignUpView()
-                })
-                .frame(width: 100, height: 100)
-                .font(.title)
-                .foregroundColor(Color.white)
-                .background(Color.blue)
-                .cornerRadius(10)
+        ZStack {
+            Palette.navy.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            VStack {
+                Spacer()
                 
-                Button("Sign In") {
-                    signIn.toggle()
-                }
-                .sheet(isPresented: $signIn, content: {
-                    SignInView()
-                })
-                .frame(width: 100, height: 100)
-                .font(.title)
-                .foregroundColor(Color.white)
-                .background(Color.blue)
-                .cornerRadius(10)
+                Text("Cleanse")
+                    .font(.largeTitle)
+                    .padding()
                 
-                Button("Get User") {
-                    Task {
-                        print(await sb.getUser() as Any)
+                
+                Text("It's time to reset")
+                    .font(.headline)
+                
+                Spacer()
+                Spacer()
+                Spacer()
+                
+                HStack {
+                    Button("Sign Up") {
+                        signUp.toggle()
                     }
+                    .sheet(isPresented: $signUp, content: {
+                        SignUpView()
+                    })
+                    .frame(width: 150, height: 60)
+                    .font(.title)
+                    .foregroundColor(Palette.black)
+                    .background(Palette.green)
+                    .cornerRadius(10)
+                    
+                    Button("Sign In") {
+                        signIn.toggle()
+                    }
+                    .sheet(isPresented: $signIn, content: {
+                        SignInView()
+                    })
+                    .frame(width: 150, height: 60)
+                    .font(.title)
+                    .foregroundColor(Palette.black)
+                    .background(Palette.green)
+                    .cornerRadius(10)
                 }
-                .frame(width: 100, height: 100)
-                .font(.title)
-                .foregroundColor(Color.white)
-                .background(Color.blue)
-                .cornerRadius(10)
+                
+                Spacer()
             }
-            
-            Spacer()
         }
     }
 }

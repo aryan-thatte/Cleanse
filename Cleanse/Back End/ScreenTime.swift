@@ -26,7 +26,7 @@ struct ScreenTime {
     }
     
     func getActivity() {
-        let schedule = DeviceActivitySchedule(
+        let _ = DeviceActivitySchedule(
             intervalStart: DateComponents(hour: 0, minute: 0, second: 0),
             intervalEnd: DateComponents(hour: 23, minute: 59, second: 59),
             repeats: true
