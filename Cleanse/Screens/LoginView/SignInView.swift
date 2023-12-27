@@ -18,7 +18,9 @@ struct SignInView: View {
     var body: some View {
         VStack(alignment: .center) {
             TextField("Email", text: $username)
+                .foregroundColor(Palette.white)
             SecureField("Password", text: $password)
+                .foregroundColor(Palette.white)
             
             Button("Submit") {
                 Task {

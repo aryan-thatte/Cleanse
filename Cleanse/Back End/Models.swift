@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Cleanse: Codable {
+struct Cleanse: Codable, Hashable, Identifiable {
     let id: UUID
     let name: String
     let start_date: Date
@@ -15,7 +15,7 @@ struct Cleanse: Codable {
     let penalty: String
 }
 
-struct Member: Codable {
+struct Member: Codable, Hashable {
     let id: UUID
     let cleanse: UUID
     let user: UUID
