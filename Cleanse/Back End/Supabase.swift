@@ -10,6 +10,8 @@ import Supabase
 import SwiftUI
 
 class Supabase: ObservableObject {
+    // EnvironmentObject: https://youtu.be/-yjKAb0Pj60?si=7193DPQECLGcfTvK
+    
     // shared environment instance of Supabase class
     static var shared: Supabase = Supabase()
     
@@ -27,7 +29,9 @@ class Supabase: ObservableObject {
             print("signUp() failed with the following error: \(error)")
             return
         }
-        authenticated = true
+        await MainActor.run {
+            authenticated = true
+        }
     }
     
     func signIn(username: String, password: String) async -> Void {
@@ -37,7 +41,10 @@ class Supabase: ObservableObject {
             print("signIn() failed with the following error: \(error)")
             return
         }
-        authenticated = true
+        await MainActor.run {
+            authenticated = true
+        }
+        
     }
     
     func signOut() async -> Void {
@@ -47,7 +54,9 @@ class Supabase: ObservableObject {
             print("signOut() failed with the following error: \(error)")
             return
         }
-        authenticated = false
+        await MainActor.run {
+            authenticated = false
+        }
     }
     
     func loggedin() async -> Bool {
