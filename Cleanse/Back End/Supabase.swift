@@ -78,7 +78,7 @@ class Supabase: ObservableObject {
         }
     }
     
-    func fetchUserCleanses() async -> [Cleanse]? {
+    func fetchUserCleanses() async -> [Cleanse] {
         do {
             // fetch all Members where the user is the current user
             let user: User? = await getUser()
@@ -110,7 +110,7 @@ class Supabase: ObservableObject {
             return cleanses
         } catch {
             print(error)
-            return nil
+            return []
         }
     }
     
