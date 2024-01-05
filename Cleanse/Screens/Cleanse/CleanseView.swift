@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct CleanseView: View {
+    @EnvironmentObject var sb: Supabase
     let cleanse: Cleanse
     
     var body: some View {
-        Text("Cleanse penalty: \(cleanse.penalty)")
+        ZStack {
+            LinearGradient(colors: [Palette.navy, Palette.green], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+            Text("Cleanse penalty: \(cleanse.penalty)")
+        }
     }
 }
 

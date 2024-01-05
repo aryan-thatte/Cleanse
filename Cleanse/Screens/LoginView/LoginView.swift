@@ -13,20 +13,32 @@ struct LoginView: View {
     @EnvironmentObject var sb: Supabase
     @State private var signUp: Bool = false
     @State private var signIn: Bool = false
+    @State private var animateGradient: Bool = false
     
     var body: some View {
         ZStack {
-            Palette.navy.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            // background
+            LinearGradient(colors: [Palette.sky, Palette.navy], startPoint: .topLeading, endPoint: .bottomTrailing)
+                .hueRotation(animateGradient ? .degrees(98) : .degrees(0))
+                .ignoresSafeArea()
+                .onAppear {
+                    withAnimation(.linear(duration: 2.5).repeatForever(autoreverses: true)) {
+                        animateGradient = true
+                    }
+                }
+            
             VStack {
                 Spacer()
                 
                 Text("Cleanse")
-                    .font(.largeTitle)
+                    .font(.system(size: 48))
                     .padding()
+                    .shadow(radius: 10, y: 15)
                 
                 
                 Text("It's time to reset")
-                    .font(.headline)
+                    .font(.system(size: 20))
+                    .shadow(radius: 10, y: 15)
                 
                 Spacer()
                 Spacer()
@@ -41,9 +53,10 @@ struct LoginView: View {
                     })
                     .frame(width: 150, height: 60)
                     .font(.title)
-                    .foregroundColor(Palette.black)
-                    .background(Palette.green)
+                    .foregroundColor(Palette.white)
+                    .background(Palette.navy)
                     .cornerRadius(10)
+                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, y: 10)
                     
                     Button("Sign In") {
                         signIn.toggle()
@@ -53,9 +66,10 @@ struct LoginView: View {
                     })
                     .frame(width: 150, height: 60)
                     .font(.title)
-                    .foregroundColor(Palette.black)
-                    .background(Palette.green)
+                    .foregroundColor(Palette.white)
+                    .background(Palette.navy)
                     .cornerRadius(10)
+                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, y: 10)
                 }
                 
                 Spacer()

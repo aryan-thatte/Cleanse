@@ -1,5 +1,5 @@
 //
-//  SupabaseClient.swift
+//  Supabase.swift
 //  Cleanse
 //
 //  Created by Aryan Thatte on 2023-11-18.
@@ -44,7 +44,6 @@ class Supabase: ObservableObject {
         await MainActor.run {
             authenticated = true
         }
-        
     }
     
     func signOut() async -> Void {
@@ -104,7 +103,6 @@ class Supabase: ObservableObject {
                     .eq(column: "id", value: cleanseID)
                     .execute()
                     .value
-                print(cleanse[0].id)
                 cleanses.append(cleanse[0])
             }
             return cleanses

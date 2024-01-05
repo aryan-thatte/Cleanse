@@ -38,5 +38,4 @@ struct SignInView: View {
 
 #Preview {
     LoginView()
-        .environmentObject(Supabase.shared)
 }
