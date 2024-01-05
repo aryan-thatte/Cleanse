@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct HomeView: View {
+struct CleanseListView: View {
     @EnvironmentObject var sb: Supabase
     @State var cleanses: [Cleanse] = []
     @State private var animateGradient: Bool = false
@@ -18,7 +18,7 @@ struct HomeView: View {
         NavigationStack {
             ZStack {
                 // https://medium.com/@danishandersjensen/swiftui-gradient-99e57f8e3e27#:~:text=LinearGradient%20is%20a%20SwiftUI%20view,leading%20or%20.
-                LinearGradient(colors: [Palette.navy, Palette.green], startPoint: .top, endPoint: .bottom)
+                LinearGradient(colors: [Palette.blue, Palette.green], startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
                 
                 VStack {
@@ -29,7 +29,7 @@ struct HomeView: View {
                             } else {
                                 ForEach(cleanses) { cleanse in
                                     NavigationLink(value: cleanse) {
-                                        GroupBox(label: Text("\(cleanse.name)"), content: {
+                                        GroupBox(label: Text("\(cleanse.name)").lineLimit(1), content: {
                                             Text(cleanse.end_date, style: .relative)
                                                 .frame(maxWidth: .infinity, alignment: .bottomTrailing)
                                                 .lineLimit(1)
@@ -48,7 +48,7 @@ struct HomeView: View {
             }
             .navigationTitle("Cleanses")
             .navigationDestination(for: Cleanse.self) { cleanse in
-                CleanseView(cleanse: cleanse)
+                CleanseDetailsView(cleanse: cleanse)
             }
         }
         .accentColor(Palette.white)
@@ -62,6 +62,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(cleanses: Mocks.cleanses)
+    CleanseListView(cleanses: Mocks.cleanses)
         .environmentObject(Supabase.shared)
 }

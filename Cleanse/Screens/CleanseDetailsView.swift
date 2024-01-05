@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CleanseView: View {
+struct CleanseDetailsView: View {
     @EnvironmentObject var sb: Supabase
     let cleanse: Cleanse
     
@@ -21,5 +21,5 @@ struct CleanseView: View {
 }
 
 #Preview {
-    CleanseView(cleanse: Mocks.cleanses[0])
+    CleanseDetailsView(cleanse: Mocks.cleanses[0])
 }

@@ -21,8 +21,8 @@
 		144DBB232B0940D100592C49 /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144DBB222B0940D100592C49 /* Supabase.swift */; };
 		14D7CC5D2B3766F3004D8CA2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D7CC5C2B3766F3004D8CA2 /* Constants.swift */; };
 		14D7CC602B3B829E004D8CA2 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D7CC5F2B3B829E004D8CA2 /* Mocks.swift */; };
-		14D7CC632B3B95A0004D8CA2 /* CleanseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D7CC622B3B95A0004D8CA2 /* CleanseView.swift */; };
-		14E9C22B2B2EBD0900AE3FD2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9C22A2B2EBD0900AE3FD2 /* HomeView.swift */; };
+		14D7CC632B3B95A0004D8CA2 /* CleanseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D7CC622B3B95A0004D8CA2 /* CleanseDetailsView.swift */; };
+		14E9C22B2B2EBD0900AE3FD2 /* CleanseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9C22A2B2EBD0900AE3FD2 /* CleanseListView.swift */; };
 		14FFDA232B12E9A200A45DB0 /* ScreenTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FFDA222B12E9A200A45DB0 /* ScreenTime.swift */; };
 		14FFDA262B15966000A45DB0 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FFDA252B15966000A45DB0 /* Models.swift */; };
 /* End PBXBuildFile section */
@@ -61,8 +61,8 @@
 		144DBB222B0940D100592C49 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
 		14D7CC5C2B3766F3004D8CA2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		14D7CC5F2B3B829E004D8CA2 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
-		14D7CC622B3B95A0004D8CA2 /* CleanseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanseView.swift; sourceTree = "<group>"; };
-		14E9C22A2B2EBD0900AE3FD2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		14D7CC622B3B95A0004D8CA2 /* CleanseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanseDetailsView.swift; sourceTree = "<group>"; };
+		14E9C22A2B2EBD0900AE3FD2 /* CleanseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanseListView.swift; sourceTree = "<group>"; };
 		14FFDA222B12E9A200A45DB0 /* ScreenTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTime.swift; sourceTree = "<group>"; };
 		14FFDA242B12FA1C00A45DB0 /* Cleanse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cleanse.entitlements; sourceTree = "<group>"; };
 		14FFDA252B15966000A45DB0 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -152,22 +152,6 @@
 			path = CleanseUITests;
 			sourceTree = "<group>";
 		};
-		14B8DDF42B2FF28F0074D8FA /* ContentView */ = {
-			isa = PBXGroup;
-			children = (
-				142AB1212AF71B5C00E25BFC /* ContentView.swift */,
-			);
-			path = ContentView;
-			sourceTree = "<group>";
-		};
-		14B8DDF72B2FF3530074D8FA /* HomeView */ = {
-			isa = PBXGroup;
-			children = (
-				14E9C22A2B2EBD0900AE3FD2 /* HomeView.swift */,
-			);
-			path = HomeView;
-			sourceTree = "<group>";
-		};
 		14B8DDF82B2FF3810074D8FA /* Back End */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,10 +167,10 @@
 		14B8DDF92B2FF39C0074D8FA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				14D7CC612B3B9580004D8CA2 /* Cleanse */,
-				14B8DDF42B2FF28F0074D8FA /* ContentView */,
-				14B8DDF72B2FF3530074D8FA /* HomeView */,
 				14B8DDFA2B2FF3BE0074D8FA /* LoginView */,
+				14D7CC622B3B95A0004D8CA2 /* CleanseDetailsView.swift */,
+				14E9C22A2B2EBD0900AE3FD2 /* CleanseListView.swift */,
+				142AB1212AF71B5C00E25BFC /* ContentView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -199,14 +183,6 @@
 				144DBB1E2B02E9FB00592C49 /* SignInView.swift */,
 			);
 			path = LoginView;
-			sourceTree = "<group>";
-		};
-		14D7CC612B3B9580004D8CA2 /* Cleanse */ = {
-			isa = PBXGroup;
-			children = (
-				14D7CC622B3B95A0004D8CA2 /* CleanseView.swift */,
-			);
-			path = Cleanse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,11 +323,11 @@
 			files = (
 				144DBB232B0940D100592C49 /* Supabase.swift in Sources */,
 				14D7CC5D2B3766F3004D8CA2 /* Constants.swift in Sources */,
-				14D7CC632B3B95A0004D8CA2 /* CleanseView.swift in Sources */,
+				14D7CC632B3B95A0004D8CA2 /* CleanseDetailsView.swift in Sources */,
 				144DBB1D2B02E28A00592C49 /* LoginView.swift in Sources */,
 				14FFDA232B12E9A200A45DB0 /* ScreenTime.swift in Sources */,
 				142AB1222AF71B5C00E25BFC /* ContentView.swift in Sources */,
-				14E9C22B2B2EBD0900AE3FD2 /* HomeView.swift in Sources */,
+				14E9C22B2B2EBD0900AE3FD2 /* CleanseListView.swift in Sources */,
 				142AB1202AF71B5C00E25BFC /* CleanseApp.swift in Sources */,
 				14FFDA262B15966000A45DB0 /* Models.swift in Sources */,
 				144DBB212B02EA0900592C49 /* SignUpView.swift in Sources */,
