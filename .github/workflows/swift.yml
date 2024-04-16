@@ -19,7 +19,7 @@ jobs:
     
     - name: Remove *.docc folders
       run: |
-        find /Users/runner/Library/Developer/Xcode/DerivedData/Cleanse-ayltseohupupatfiewbbadrivxrh/SourcePackages/checkouts/Get/Sources/Get/ -type d -name "*.docc" -exec rm -r {} +
+        find /Users/runner/Library/Developer/Xcode/DerivedData/Cleanse-ayltseohupupatfiewbbadrivxrh/SourcePackages/checkouts/Get/Sources/Get/ -type d -name '*.docc' -exec rm -r {} +
     
     - name: Build project
       run: xcodebuild -allowProvisioningUpdates -scheme Cleanse build
