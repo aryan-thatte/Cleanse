@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140A27E72BCE1315005157F8 /* .build in Resources */ = {isa = PBXBuildFile; fileRef = 140A27E42BCE1314005157F8 /* .build */; };
+		140A27E82BCE1315005157F8 /* .git in Resources */ = {isa = PBXBuildFile; fileRef = 140A27E52BCE1315005157F8 /* .git */; };
+		140A27E92BCE1315005157F8 /* .github in Resources */ = {isa = PBXBuildFile; fileRef = 140A27E62BCE1315005157F8 /* .github */; };
 		142AB1202AF71B5C00E25BFC /* CleanseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AB11F2AF71B5C00E25BFC /* CleanseApp.swift */; };
 		142AB1222AF71B5C00E25BFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AB1212AF71B5C00E25BFC /* ContentView.swift */; };
 		142AB1262AF71B6000E25BFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142AB1252AF71B6000E25BFC /* Assets.xcassets */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140A27E42BCE1314005157F8 /* .build */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .build; sourceTree = "<group>"; };
+		140A27E52BCE1315005157F8 /* .git */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .git; sourceTree = "<group>"; };
+		140A27E62BCE1315005157F8 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
 		142AB11C2AF71B5C00E25BFC /* Cleanse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cleanse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		142AB11F2AF71B5C00E25BFC /* CleanseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanseApp.swift; sourceTree = "<group>"; };
 		142AB1212AF71B5C00E25BFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +103,9 @@
 		142AB1132AF71B5C00E25BFC = {
 			isa = PBXGroup;
 			children = (
+				140A27E42BCE1314005157F8 /* .build */,
+				140A27E52BCE1315005157F8 /* .git */,
+				140A27E62BCE1315005157F8 /* .github */,
 				142AB11E2AF71B5C00E25BFC /* Cleanse */,
 				142AB1312AF71B6000E25BFC /* CleanseTests */,
 				142AB13B2AF71B6000E25BFC /* CleanseUITests */,
@@ -296,7 +305,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				142AB1292AF71B6000E25BFC /* Preview Assets.xcassets in Resources */,
+				140A27E72BCE1315005157F8 /* .build in Resources */,
+				140A27E82BCE1315005157F8 /* .git in Resources */,
 				142AB1262AF71B6000E25BFC /* Assets.xcassets in Resources */,
+				140A27E92BCE1315005157F8 /* .github in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
