@@ -17,6 +17,7 @@ jobs:
 
     steps:
     - name: Remove .docc files
+      uses: dorny/paths-filter@v2
       with:
         filters: '*.docc'
         path: '/Users/runner/Library/Developer/Xcode/DerivedData/'
