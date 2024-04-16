@@ -18,6 +18,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Select Xcode version
-      run: sudo xcode-select -switch /Applications/Xcode_13.4.1.app
+      run: sudo xcode-select -switch /Applications/Xcode_14.1.0.app
     - name: Build
-      run: xcodebuild -allowProvisioningUpdates -scheme Cleanse build CODE_SIGNING_ALLOWED=NO
+      run: xcodebuild -allowProvisioningUpdates -scheme Cleanse build
