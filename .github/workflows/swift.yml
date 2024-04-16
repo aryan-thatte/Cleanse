@@ -17,5 +17,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - task: DeleteFiles@1
+      displayName: 'Remove .docc files'
+      inputs:
+        SourceFolder:'/Users/runner/Library/Developer/Xcode/DerivedData/'
+        contents: |
+          *.docc
     - name: Build
       run: xcodebuild -allowProvisioningUpdates -scheme Cleanse build
