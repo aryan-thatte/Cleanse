@@ -16,12 +16,12 @@ jobs:
     runs-on: macos-latest
 
     steps:
+    - name: Remove .docc files
+      with:
+        filters: `*.docc`
+        path: '/Users/runner/Library/Developer/Xcode/DerivedData/'
+    
     - uses: actions/checkout@v3
-    - task: DeleteFiles@1
-      displayName: 'Remove .docc files'
-      inputs:
-        SourceFolder:'/Users/runner/Library/Developer/Xcode/DerivedData/'
-        contents: |
-          *.docc
+    
     - name: Build
       run: xcodebuild -allowProvisioningUpdates -scheme Cleanse build
