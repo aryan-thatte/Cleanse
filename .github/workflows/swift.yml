@@ -12,15 +12,14 @@ on:
 
 jobs:
   build:
-
     runs-on: macos-latest
-
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
     
-    - name: Remove .docc folders
-    - run: |
+    - name: Remove *.docc folders
+      run: |
         find /Users/runner/Library/Developer/Xcode/DerivedData/ -type d -name "*.docc" -exec rm -r {} +
     
-    - name: Build
+    - name: Build project
       run: xcodebuild -allowProvisioningUpdates -scheme Cleanse build
