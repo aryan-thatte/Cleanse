@@ -18,7 +18,7 @@ jobs:
     steps:
     - name: Remove .docc files
       with:
-        filters: `*.docc`
+        filters: '*.docc'
         path: '/Users/runner/Library/Developer/Xcode/DerivedData/'
     
     - uses: actions/checkout@v3
