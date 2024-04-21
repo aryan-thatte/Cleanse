@@ -31,13 +31,13 @@ struct LoginView: View {
                 Spacer()
                 
                 Text("Cleanse")
-                    .font(.system(size: 48))
+                    .font(Fonts.title)
                     .padding()
                     .shadow(radius: 10, y: 15)
                 
                 
                 Text("It's time to reset")
-                    .font(.system(size: 20))
+                    .font(Fonts.subtitle2)
                     .shadow(radius: 10, y: 15)
                 
                 Spacer()
@@ -45,31 +45,39 @@ struct LoginView: View {
                 Spacer()
                 
                 HStack {
-                    Button("Sign Up") {
+                    Button(action: {
+                        Haptics.shared.impact(style: .soft)
                         signUp.toggle()
+                    }) {
+                        Text("Sign Up")
+                            .frame(width: 150, height: 60)
+                            .font(Fonts.button1)
+                            .foregroundColor(Palette.offwhite)
                     }
-                    .sheet(isPresented: $signUp, content: {
+                    .background(Palette.blue)
+                    .cornerRadius(25)
+                    .shadow(radius: 10, y: 10)
+                    .sheet(isPresented: $signUp) {
                         SignUpView()
-                    })
-                    .frame(width: 150, height: 60)
-                    .font(.title)
-                    .foregroundColor(Palette.white)
-                    .background(Palette.navy)
-                    .cornerRadius(10)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, y: 10)
-                    
-                    Button("Sign In") {
-                        signIn.toggle()
+                            .presentationDetents([.fraction(0.85)])
                     }
-                    .sheet(isPresented: $signIn, content: {
+                    
+                    Button(action: {
+                        Haptics.shared.impact(style: .soft)
+                        signIn.toggle()
+                    }) {
+                        Text("Sign In")
+                            .frame(width: 150, height: 60)
+                            .font(Fonts.button1)
+                            .foregroundColor(Palette.offwhite)
+                    }
+                    .background(Palette.blue)
+                    .cornerRadius(25)
+                    .shadow(radius: 10, y: 10)
+                    .sheet(isPresented: $signIn) {
                         SignInView()
-                    })
-                    .frame(width: 150, height: 60)
-                    .font(.title)
-                    .foregroundColor(Palette.white)
-                    .background(Palette.navy)
-                    .cornerRadius(10)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, y: 10)
+                            .presentationDetents([.fraction(0.85)])
+                    }
                 }
                 
                 Spacer()

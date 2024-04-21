@@ -12,7 +12,7 @@ import SwiftUI
 class Supabase: ObservableObject {
     // EnvironmentObject: https://youtu.be/-yjKAb0Pj60?si=7193DPQECLGcfTvK
     
-    // shared environment instance of Supabase class
+    // singleton
     static var shared: Supabase = Supabase()
     
     // updated variable which changes based on if user logs in/out

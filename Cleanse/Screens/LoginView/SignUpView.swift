@@ -14,23 +14,43 @@ struct SignUpView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var confirmpassword: String = ""
     
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .leading) {
+            Text("Create an Account")
+                .padding()
+                .font(Fonts.subtitle1)
+                .background(Color.red)
+            
+            Spacer()
+            
             TextField("Email", text: $username)
+                .padding()
+                .cornerRadius(10)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.horizontal)
+                .padding(.vertical, 6)
                 .foregroundColor(Palette.white)
+            
             SecureField("Password", text: $password)
                 .foregroundColor(Palette.white)
-        }
-        Button("Submit") {
-            Task {
-                await sb.signUp(username: username, password: password)
-                print("Signed up with \(username)")
+            SecureField("Confirm password", text: $confirmpassword)
+                .foregroundColor(Palette.white)
+            
+            Button("Submit") {
+                Task {
+                    await sb.signUp(username: username, password: password)
+                    print("Signed up with \(username)")
+                }
+                dismiss()
             }
-            dismiss()
-        }
+            .foregroundColor(username.isEmpty || password.isEmpty ? Palette.offwhite : Palette.blue)
             .disabled(username.isEmpty || password.isEmpty)
-
+            
+            Spacer()
+            Spacer()
+        }
     }
 }
 

@@ -10,6 +10,7 @@
 		140A27E72BCE1315005157F8 /* .build in Resources */ = {isa = PBXBuildFile; fileRef = 140A27E42BCE1314005157F8 /* .build */; };
 		140A27E82BCE1315005157F8 /* .git in Resources */ = {isa = PBXBuildFile; fileRef = 140A27E52BCE1315005157F8 /* .git */; };
 		140A27E92BCE1315005157F8 /* .github in Resources */ = {isa = PBXBuildFile; fileRef = 140A27E62BCE1315005157F8 /* .github */; };
+		14153BD82BD5A3D100ADB3F6 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14153BD72BD5A3D100ADB3F6 /* Haptics.swift */; };
 		142AB1202AF71B5C00E25BFC /* CleanseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AB11F2AF71B5C00E25BFC /* CleanseApp.swift */; };
 		142AB1222AF71B5C00E25BFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AB1212AF71B5C00E25BFC /* ContentView.swift */; };
 		142AB1262AF71B6000E25BFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142AB1252AF71B6000E25BFC /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		140A27E42BCE1314005157F8 /* .build */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .build; sourceTree = "<group>"; };
 		140A27E52BCE1315005157F8 /* .git */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .git; sourceTree = "<group>"; };
 		140A27E62BCE1315005157F8 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
+		14153BD72BD5A3D100ADB3F6 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		142AB11C2AF71B5C00E25BFC /* Cleanse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cleanse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		142AB11F2AF71B5C00E25BFC /* CleanseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanseApp.swift; sourceTree = "<group>"; };
 		142AB1212AF71B5C00E25BFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14153BD62BD5A34900ADB3F6 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				14E9C22A2B2EBD0900AE3FD2 /* CleanseListView.swift */,
+				14D7CC622B3B95A0004D8CA2 /* CleanseDetailsView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 		142AB1132AF71B5C00E25BFC = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +180,7 @@
 				14D7CC5C2B3766F3004D8CA2 /* Constants.swift */,
 				14FFDA222B12E9A200A45DB0 /* ScreenTime.swift */,
 				144DBB222B0940D100592C49 /* Supabase.swift */,
+				14153BD72BD5A3D100ADB3F6 /* Haptics.swift */,
 			);
 			path = "Back End";
 			sourceTree = "<group>";
@@ -176,10 +188,9 @@
 		14B8DDF92B2FF39C0074D8FA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				14B8DDFA2B2FF3BE0074D8FA /* LoginView */,
-				14D7CC622B3B95A0004D8CA2 /* CleanseDetailsView.swift */,
-				14E9C22A2B2EBD0900AE3FD2 /* CleanseListView.swift */,
 				142AB1212AF71B5C00E25BFC /* ContentView.swift */,
+				14B8DDFA2B2FF3BE0074D8FA /* LoginView */,
+				14153BD62BD5A34900ADB3F6 /* MainView */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -340,6 +351,7 @@
 				14FFDA232B12E9A200A45DB0 /* ScreenTime.swift in Sources */,
 				142AB1222AF71B5C00E25BFC /* ContentView.swift in Sources */,
 				14E9C22B2B2EBD0900AE3FD2 /* CleanseListView.swift in Sources */,
+				14153BD82BD5A3D100ADB3F6 /* Haptics.swift in Sources */,
 				142AB1202AF71B5C00E25BFC /* CleanseApp.swift in Sources */,
 				14FFDA262B15966000A45DB0 /* Models.swift in Sources */,
 				144DBB212B02EA0900592C49 /* SignUpView.swift in Sources */,
@@ -521,7 +533,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -557,7 +569,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -624,6 +636,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CS89S3NJDB;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.latte.CleanseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -642,6 +655,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CS89S3NJDB;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.latte.CleanseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

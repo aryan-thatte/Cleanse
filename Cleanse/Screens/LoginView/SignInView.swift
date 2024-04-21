@@ -18,7 +18,13 @@ struct SignInView: View {
     var body: some View {
         VStack(alignment: .center) {
             TextField("Email", text: $username)
+                .padding()
+                .cornerRadius(10)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.horizontal)
+                .padding(.vertical, 3)
                 .foregroundColor(Palette.white)
+
             SecureField("Password", text: $password)
                 .foregroundColor(Palette.white)
             
@@ -29,8 +35,8 @@ struct SignInView: View {
                 }
                 dismiss()
             }
-                .foregroundColor(username.isEmpty || password.isEmpty ? Color.gray : Color.blue)
-                .disabled(username.isEmpty || password.isEmpty)
+            .foregroundColor(username.isEmpty || password.isEmpty ? Palette.grey : Palette.blue)
+            .disabled(username.isEmpty || password.isEmpty)
         }
 
     }
