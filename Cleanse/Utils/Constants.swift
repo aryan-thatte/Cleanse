@@ -25,5 +25,6 @@ struct Fonts {
     static let subtitle1: Font = Font.custom("Arial Rounded MT Bold", size: 30)
     static let subtitle2: Font = Font.custom("Arial Rounded MT Bold", size: 26)
     static let button1: Font = Font.custom("Arial Rounded MT Bold", size: 28)
+    static let button2: Font = Font.custom("Arial Rounded MT Bold", size: 20)
     static let text: Font = Font.custom("Arial Rounded MT Bold", size: 22)
 }
