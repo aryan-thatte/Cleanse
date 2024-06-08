@@ -6,33 +6,48 @@
 //
 
 import Foundation
-import FamilyControls
 import DeviceActivity
+import FamilyControls
 
 
 struct ScreenTime {
     // https://crunchybagel.com/monitoring-app-usage-using-the-screen-time-api/
+    let allDaySchedule: DeviceActivitySchedule
+    let center: DeviceActivityCenter
+    let AC: AuthorizationCenter
+    let FAS: FamilyActivitySelection
     
-    private let ac = AuthorizationCenter.shared
+    init() {
+        allDaySchedule = DeviceActivitySchedule(intervalStart: DateComponents(hour: 0, minute: 0, second: 0), intervalEnd: DateComponents(hour: 23, minute: 59, second: 59), repeats: true)
+        center = DeviceActivityCenter()
+        AC = AuthorizationCenter.shared
+        FAS = FamilyActivitySelection()
+        
+    }
     
-    func requestPermission() {
+    func authenticate() {
         Task {
             do {
-                try await ac.requestAuthorization(for: .individual)
-            } catch {
-                print("Failed to fetch screen time permission with this error: \(error)")
+                try await AC.requestAuthorization(for: .individual)
+            } catch (let error) {
+                print("\(error)")
+            }
+        }
+        Task {
+            do {
+                
             }
         }
     }
     
+    
     func getActivity() {
-        let _ = DeviceActivitySchedule(
-            intervalStart: DateComponents(hour: 0, minute: 0, second: 0),
-            intervalEnd: DateComponents(hour: 23, minute: 59, second: 59),
-            repeats: true
-        )
-//        let activity = DeviceActivityData.ActivitySegment
-        let act = DeviceActivityData.ActivitySegment.self
-        print(act)
+        // DeviceActivityName("allDayMonitoring")
+//        do {
+//            try center.startMonitoring(name, during: allDaySchedule)
+//        } catch(let error) {
+//            print("\(error)")
+//        }
+        print(center.activities.count)
     }
 }
